@@ -34,8 +34,6 @@ struct MyAdvsView: View {
         .onAppear {
             self.observed.getAdvsMy()
         }
-        
-        
         .navigationBarTitle("My Advs", displayMode: .inline)
         .navigationBarItems(leading: (
             Button(action: {

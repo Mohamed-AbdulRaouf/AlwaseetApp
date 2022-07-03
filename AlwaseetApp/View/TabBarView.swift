@@ -12,7 +12,6 @@ struct TabbarView: View {
     var body: some View {
         TabView {
             NavigationView {
-//                ActivitiesContentView(activtiesData: Activities(data: ActivitiesMockStore.activityData, items: ActivitiesMockStore.activities))
                 HomeView()
             }
             .tag(0)
@@ -23,7 +22,6 @@ struct TabbarView: View {
             }
             
             NavigationView {
-//                ActivitiesCartView(ShoppingCartItemsData: ActivitiesCart(data: ActivitiesMockStore.shoppingCartData))
                 MyAdvsView()
             }
             .tag(1)
@@ -33,17 +31,13 @@ struct TabbarView: View {
             }
             
             NavigationView {
-                     AccountView()
-//                ProfileView()
-                  }
-                   .tag(2)
-                    .tabItem {
-                    Image("profile-glyph-icon")
-                    Text("Account")
-                }
+                AccountView()
+            }
+            .tag(2)
+            .tabItem {
+                Image("profile-glyph-icon")
+                Text("Account")
+            }
         }
     }
 }
-
-
-

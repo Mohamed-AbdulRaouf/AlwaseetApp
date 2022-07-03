@@ -34,7 +34,6 @@ extension LogInView {
                     if let error = error {
                         DispatchQueue.main.async {
                             self.loginMessage = "Please check from your account"
-//                            print(error.localizedDescription)
                             return
                         }
                     }
@@ -46,11 +45,11 @@ extension LogInView {
                             return
                         }
                     } else {
-                    UserLoginData.shared.userPhone = phone
-                    UserLoginData.shared.userName = loginUser.name
-                    Constants.shared.isUserLogin = true
-                    self.user = loginUser
-                    self.loggedIn = true
+                        UserLoginData.shared.userPhone = phone
+                        UserLoginData.shared.userName = loginUser.name
+                        Constants.shared.isUserLogin = true
+                        self.user = loginUser
+                        self.loggedIn = true
                     }
                 }
             }

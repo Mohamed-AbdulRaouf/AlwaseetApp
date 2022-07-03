@@ -11,10 +11,8 @@ import SwiftUI
 struct AccountView: View {
     @State var notificationToggle: Bool = false
     @State var locationUsage: Bool = false
-//    @State var username: String = "James"
     @State var selectedCurrency: Int = 0
-    @State var currencyArray: [String] = ["EG EGP Pounds", "$ US Dollar", "£ GBP", "€ Euro"]
-    
+    @State var currencyArray: [String] = ["EG EGP Pounds", "$ US Dollar", "£ GBP", "€ Euro"]    
     @State var selectedPaymentMethod: Int = 1
     @State var paymentMethodArray: [String] = ["Paypal", "Credit/Debit Card", "Bitcoin"]
     @State var isLogout = false
@@ -32,7 +30,7 @@ struct AccountView: View {
                     .font(.system(size: 20))
                 Text(UserLoginData.shared.userPhone)
                     .font(.system(size: 20))
-                    
+                
                 Button {
                     self.isLogout = true
                 } label: {
@@ -45,15 +43,15 @@ struct AccountView: View {
                     
                     Section(header: Text("Payment Settings")) {
                         Picker(selection: self.$selectedCurrency, label: Text("Currency")) {
-                                         ForEach(0 ..< self.currencyArray.count) {
-                                                  Text(self.currencyArray[$0]).tag($0)
-                                            }
+                            ForEach(0 ..< self.currencyArray.count) {
+                                Text(self.currencyArray[$0]).tag($0)
+                            }
                         }
                         
                         Picker(selection: self.$selectedPaymentMethod, label: Text("Payment Method")) {
-                                  ForEach(0 ..< self.paymentMethodArray.count) {
-                                       Text(self.paymentMethodArray[$0]).tag($0)
-                                     }
+                            ForEach(0 ..< self.paymentMethodArray.count) {
+                                Text(self.paymentMethodArray[$0]).tag($0)
+                            }
                         }
                         Button(action: {
                             print("Button tapped")
@@ -67,13 +65,13 @@ struct AccountView: View {
                                 Text("Connect \(self.paymentMethodArray[self.selectedPaymentMethod]) to your account")
                             }
                         }
-
+                        
                     }
                     Section(header: Text("Personal Information")) {
-                       NavigationLink(destination: Text("Profile Info")) {
+                        NavigationLink(destination: Text("Profile Info")) {
                             Text("Profile Information")
                         }
-                       
+                        
                         NavigationLink(destination: Text("Billing Info")) {
                             Text("Billing Information")
                         }
@@ -81,7 +79,7 @@ struct AccountView: View {
                     
                     Section(footer: Text("Allow push notifications to get latest travel and equipment deals")) {
                         Toggle(isOn: self.$locationUsage) {
-                              Text("Location Usage")
+                            Text("Location Usage")
                         }
                         Toggle(isOn: self.$notificationToggle) {
                             Text("Notifications")
@@ -90,11 +88,10 @@ struct AccountView: View {
                     fullScreenCover(isPresented: self.$isLogout, onDismiss: nil) {
                         LogInView()
                     }
-            }.background(Color(red: 242 / 255, green: 242 / 255, blue: 242 / 255))
-            .navigationBarTitle("My Profile")
-                
+                }.background(Color(red: 242 / 255, green: 242 / 255, blue: 242 / 255))
+                    .navigationBarTitle("My Profile")
             }
         }
     }
- }
+}
 

@@ -13,7 +13,7 @@ struct ProfileView: View {
     var body: some View {
         VStack {
             VStack {
-//                Header()
+                //                Header()
                 
                 ProfileText()
             }
@@ -38,7 +38,7 @@ struct ProfileView_Previews: PreviewProvider {
 
 struct ProfilePicture: View {
     var imageName: String
-
+    
     var body: some View {
         Image(imageName)
             .resizable()
@@ -49,9 +49,9 @@ struct ProfilePicture: View {
 
 
 struct ProfileText: View {
-//    @AppStorage("name") var name = UserLoginData.shared.userName
-//    @AppStorage("subtitle") var subtitle = UserLoginData.shared.userPhone
-//    @AppStorage("description") var description = UserLoginData.shared.userEmail
+    //    @AppStorage("name") var name = UserLoginData.shared.userName
+    //    @AppStorage("subtitle") var subtitle = UserLoginData.shared.userPhone
+    //    @AppStorage("description") var description = UserLoginData.shared.userEmail
     
     var body: some View {
         VStack(spacing: 15) {

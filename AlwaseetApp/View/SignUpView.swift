@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct SignUpView: View {
-//    @EnvironmentObject var settings: UserSettings
+    //    @EnvironmentObject var settings: UserSettings
     @StateObject private var observed = SignUpObserved() // link between the view and logical data
     @State var emailAddress: String = ""
     @State var name: String = ""
@@ -22,7 +22,6 @@ struct SignUpView: View {
         
         GeometryReader { geometry in
             VStack (alignment: .center){
-                
                 Text("Create an Account")
                     .font(.title)
                     .font(.system(size: 14, weight: .bold, design: Font.Design.default))
@@ -71,19 +70,15 @@ struct SignUpView: View {
                     .font(.system(size: 12))
                 
                 Button(action: {
-                    // your action here
-//                    self.signUp.toggle()
                     self.observed.register(name: name, phone: phone, email: emailAddress, password: password)
                 }) {
                     HStack {
                         Text("Create Account")
-//                            .frame(width: geometry.size.width - 20, height: 40)
                     }
                     .padding()
                     .frame(width: geometry.size.width, height: 40)
                     .foregroundColor(Color.white)
                     .background(Color.blue)
-//                    .cornerRadius(5)
                 }
                 
                 Button(action: {
@@ -92,17 +87,13 @@ struct SignUpView: View {
                 }) {
                     HStack {
                         Text("Login")
-//                            .frame(width: geometry.size.width - 20, height: 40)
                     }
                     .padding()
                     .frame(width: geometry.size.width, height: 40)
                     .foregroundColor(Color.white)
                     .background(Color.blue)
-//                    .cornerRadius(5)
                 }.padding(.bottom, 40)
-                
                 Spacer()
-                
             }
             .fullScreenCover(isPresented: self.$observed.isuserRegister, onDismiss: nil, content: {
                 TabbarView()

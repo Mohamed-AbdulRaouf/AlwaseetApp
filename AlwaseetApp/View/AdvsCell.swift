@@ -12,21 +12,16 @@ struct AdvsCell: View {
     var body: some View {
         GeometryReader { g in
             ZStack{
-//                AsyncImage(url: URL(string: self.advData.background_image))
-//                    .opacity(0.8)
-//                .background(Color.black)
-                
                 AsyncImage(
-                               url: URL(string: self.advData.background_image),
-                               content: { image in
-                                   image.resizable()
-                                        .aspectRatio(contentMode: .fill)
-//                                        .frame(maxWidth: 300, maxHeight: 100)
-                               },
-                               placeholder: {
-                                   ProgressView()
-                               }
-                           )
+                    url: URL(string: self.advData.background_image),
+                    content: { image in
+                        image.resizable()
+                            .aspectRatio(contentMode: .fill)
+                    },
+                    placeholder: {
+                        ProgressView()
+                    }
+                )
                 
                 VStack(alignment: .center) {
                     Text("Title: \(self.advData.title)")
@@ -53,11 +48,11 @@ struct AdvsCell: View {
                         .foregroundColor(Color.white)
                         .multilineTextAlignment(.center)
                 }
-                        
+                
             }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-            .cornerRadius(10)
-            .background(Color.gray.opacity(0.5))
-            .cornerRadius(25)
+                .cornerRadius(10)
+                .background(Color.gray.opacity(0.5))
+                .cornerRadius(25)
         }
     }
 }

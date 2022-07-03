@@ -33,17 +33,9 @@ struct HomeView: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack (spacing: 10){
                             ForEach(self.observed.categories, id: \.id) { item in
-                                //                                ShopPromotionBannerView(activtiesItems: ActivitiesItem(id: 1, activityName: item.name, activityNameLabel: item.name, activityImage: item.name, selectedActivity: true), selectedActivity: ActivitySelected())
                                 Button(action: {
-                                    //                                    self.placeItemSelected = item
-                                    //                                    self.isShowing = true
-                                    print(item.name)
-                                    
                                     self.observed.getAdvsBy(filter: AdvsFilter.init(rawValue: item.name) ?? .all)
                                 }) {
-//                                    ShopPromotionBannerView(activtiesItems: ActivitiesItem(id: 1, activityName: item.name, activityNameLabel: item.name, activityImage: "", selectedActivity: true), selectedActivity: ActivitySelected())
-//                                        .frame(width: 120, height: 60)
-                                    
                                     Text("\(item.name)")
                                         .frame(width: 120, height: 60)
                                         .font(.system(size: 14, weight: .bold, design: Font.Design.default))
@@ -64,14 +56,10 @@ struct HomeView: View {
                         ForEach(self.observed.advsData, id: \.id) { item in
                             AdvsCell(advData: item)
                         }.frame(minWidth: 300, maxWidth: .infinity, minHeight: 300, maxHeight: .infinity)
-                        
                     }.padding(.leading, 30)
                         .padding(.trailing, 30)
-                        .padding(.bottom, 10)
-                    
+                        .padding(.bottom, 10)   
                 }
-                
-                
             }.onAppear(perform: {
                 self.observed.getSliders()
                 self.observed.getAdvsBy(filter: .all)

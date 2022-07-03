@@ -9,19 +9,14 @@ import SwiftUI
 
 //MARK: - Protocol
 protocol AddAdvsViewProtocol: AnyObject {
-//    var myAdvsData: [AdvsData] { get set }
     func addNewAdvs(adv: AdvsData)
-//    func getAdvsMy()
 }
 
 extension AddAdvsView {
     
-    
-    
     class AddAdvsViewObserved: ObservableObject, AddAdvsViewProtocol {
         
         //MARK: - Properties
-//        @Published var myAdvsData = [AdvsData]()
         @Published var isAdvsAdded = false
         
         //MARK: - Func
@@ -35,6 +30,5 @@ extension AddAdvsView {
                 }
             }
         }
-        
     }
 }

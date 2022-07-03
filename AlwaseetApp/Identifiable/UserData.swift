@@ -23,8 +23,7 @@ class UserData: Object, ObjectKeyIdentifiable {
 }
 
 import ObjectMapper
-//import Mappable
-//
+
 class User22 : Object, Mappable {
 
     dynamic var userId: String!

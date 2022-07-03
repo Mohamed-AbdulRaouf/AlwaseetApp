@@ -10,7 +10,6 @@
 		D93347E028711B7A0015BF6D /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93347DF28711B7A0015BF6D /* ProfileView.swift */; };
 		D93347E228711C1C0015BF6D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93347E128711C1C0015BF6D /* SettingsView.swift */; };
 		D9428604286C843100637DB3 /* AlwaseetAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9428603286C843100637DB3 /* AlwaseetAppApp.swift */; };
-		D9428606286C843100637DB3 /* ContentView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9428605286C843100637DB3 /* ContentView2.swift */; };
 		D9428608286C843800637DB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9428607286C843800637DB3 /* Assets.xcassets */; };
 		D942860B286C843800637DB3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D942860A286C843800637DB3 /* Preview Assets.xcassets */; };
 		D9428621286C868800637DB3 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9428616286C868700637DB3 /* LogInView.swift */; };
@@ -52,7 +51,6 @@
 		D93347E128711C1C0015BF6D /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		D9428600286C843000637DB3 /* AlwaseetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlwaseetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9428603286C843100637DB3 /* AlwaseetAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlwaseetAppApp.swift; sourceTree = "<group>"; };
-		D9428605286C843100637DB3 /* ContentView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView2.swift; sourceTree = "<group>"; };
 		D9428607286C843800637DB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D942860A286C843800637DB3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D9428616286C868700637DB3 /* LogInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
@@ -124,7 +122,6 @@
 				D98239E4286D6AA5006E28BA /* Observed */,
 				D9428615286C867800637DB3 /* View */,
 				D9428603286C843100637DB3 /* AlwaseetAppApp.swift */,
-				D9428605286C843100637DB3 /* ContentView2.swift */,
 				D9428607286C843800637DB3 /* Assets.xcassets */,
 				D9428609286C843800637DB3 /* Preview Content */,
 				D9428643286C8A7900637DB3 /* Constants.swift */,
@@ -285,7 +282,6 @@
 				D9428626286C868800637DB3 /* BlurView.swift in Sources */,
 				D9823A0C286F41DF006E28BA /* AddAdvsView.swift in Sources */,
 				D9428646286C9EB900637DB3 /* PagingView.swift in Sources */,
-				D9428606286C843100637DB3 /* ContentView2.swift in Sources */,
 				D98239F7286D865E006E28BA /* LoginView+Observed.swift in Sources */,
 				D9823A1028710DA9006E28BA /* AddAdvsView+Observed.swift in Sources */,
 				D9823A04286F0F79006E28BA /* CategoriesData.swift in Sources */,

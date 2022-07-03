@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct LogInView: View {
-//    @EnvironmentObject var settings: UserSettings
     @StateObject private var observed = LoginViewObserved() // link between the view and logical data
     @State  private var phoneNumber: String = ""
     @State  private var password: String = ""
@@ -21,17 +20,17 @@ struct LogInView: View {
     }
     
     var body: some View {
-    GeometryReader { geometry in
+        GeometryReader { geometry in
             VStack (alignment: .center){
                 HStack {
                     Image("2")
-                    .resizable()
-                    .frame(width: 20, height: 20)
+                        .resizable()
+                        .frame(width: 20, height: 20)
                     Text("Alwaseet App")
                         .font(.system(size: 25))
-                        
+                    
                 }.padding(.top, 30)
-                .padding(.bottom, 10)
+                    .padding(.bottom, 10)
                 
                 Text("Log Into Your Account")
                     .font(.title)
@@ -46,7 +45,6 @@ struct LogInView: View {
                     .background(Color(red: 242 / 255, green: 242 / 255, blue: 242 / 255))
                     .cornerRadius(5)
                 
-                
                 SecureField("Password", text: self.$password)
                     .frame(width: geometry.size.width - 45, height: 50)
                     .padding(EdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 0))
@@ -55,44 +53,35 @@ struct LogInView: View {
                     .textContentType(.password)
                     .cornerRadius(5)
                 
-                 Button(action: {
-                     self.observed.login(phone: phoneNumber, password: password)
-
-                 }) {
-                        HStack {
-                            Text("Log In")
-                        }
-                            .padding()
-                            .frame(width: geometry.size.width - 40, height: 40)
-                            .foregroundColor(Color.white)
-                            .background(Color.blue)
-                            .cornerRadius(5)
-                            .disabled(!loginIsValid)
+                Button(action: {
+                    self.observed.login(phone: phoneNumber, password: password)
+                    
+                }) {
+                    HStack {
+                        Text("Log In")
                     }
+                    .padding()
+                    .frame(width: geometry.size.width - 40, height: 40)
+                    .foregroundColor(Color.white)
+                    .background(Color.blue)
+                    .cornerRadius(5)
+                    .disabled(!loginIsValid)
+                }
                 
                 Button(action: {
                     self.signUp.toggle()
                 }) {
-                       HStack {
-                           Text("Sign Up")
-                       }
-                           .padding()
-                           .frame(width: geometry.size.width - 40, height: 40)
-                           .foregroundColor(Color.white)
-                           .background(Color.blue)
-                           .cornerRadius(5)
-                   }
-                
-                     .padding(.bottom, 40)
-                
+                    HStack {
+                        Text("Sign Up")
+                    }
+                    .padding()
+                    .frame(width: geometry.size.width - 40, height: 40)
+                    .foregroundColor(Color.white)
+                    .background(Color.blue)
+                    .cornerRadius(5)
+                }
+                .padding(.bottom, 40)
                 Divider()
-                
-//                Button(action: {
-//                        print("Take to forget password VC")
-//                        }) {
-//                        Text("Forgot your password?")
-//                }
-                
                 Spacer()
                 Text("\(self.observed.loginMessage)")
                     .foregroundColor(.red)
@@ -100,15 +89,15 @@ struct LogInView: View {
             }.onAppear(perform: {
                 NetworkManager.shared.connectToServer()
             })
-            .fullScreenCover(isPresented: self.$observed.loggedIn, onDismiss: nil, content: {
-                TabbarView()
-            })
-            .fullScreenCover(isPresented: self.$signUp, onDismiss: nil, content: {
-                SignUpView()
-            })
-        
-            .padding(.bottom, 90)
-            }
+                .fullScreenCover(isPresented: self.$observed.loggedIn, onDismiss: nil, content: {
+                    TabbarView()
+                })
+                .fullScreenCover(isPresented: self.$signUp, onDismiss: nil, content: {
+                    SignUpView()
+                })
+            
+                .padding(.bottom, 90)
+        }
     }
 }
 
