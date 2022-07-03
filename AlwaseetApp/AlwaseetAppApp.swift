@@ -11,7 +11,16 @@ import SwiftUI
 struct AlwaseetAppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if Constants.shared.isOnboardShow {
+                if Constants.shared.isUserLogin {
+                    TabbarView()
+                } else {
+                    LogInView()
+                }
+            } else {
+                let settings = UserSettings()
+                StartView().environmentObject(settings)
+            }
         }
     }
 }
