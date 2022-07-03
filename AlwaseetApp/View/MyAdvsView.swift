@@ -13,20 +13,7 @@ struct MyAdvsView: View {
     @State var isAddNewAdv: Bool = false
     
     var body: some View {
-        //        NavigationView {
         VStack {
-            //            Button {
-            //                self.isAddNewAdv = true
-            //            } label: {
-            //                Text("Add new Advs")
-            //            }
-//            Button("Show Sheet") {
-//                isAddNewAdv.toggle()
-//            }
-//            .sheet(isPresented: $isAddNewAdv, onDismiss: nil, content: {
-//                AddAdvsView()
-//            })
-            
             ScrollView(.vertical, showsIndicators: false) {
                 VStack (spacing: 10) {
                     ForEach(self.observed.myAdvsData, id: \.id) { item in
@@ -44,12 +31,6 @@ struct MyAdvsView: View {
         }, content: {
             AddAdvsView()
         })
-        //        .sheet(isPresented: $isAddNewAdv, onDismiss: nil, content: {
-        //            AddAdvsView()
-        //        })
-        //        .fullScreenCover(isPresented: self.$isAddNewAdv, onDismiss: nil, content: {
-        //            AddAdvsView()
-        //        })
         .onAppear {
             self.observed.getAdvsMy()
         }

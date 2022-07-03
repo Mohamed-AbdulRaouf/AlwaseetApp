@@ -38,12 +38,19 @@ struct HomeView: View {
                                     //                                    self.placeItemSelected = item
                                     //                                    self.isShowing = true
                                     print(item.name)
+                                    
+                                    self.observed.getAdvsBy(filter: AdvsFilter.init(rawValue: item.name) ?? .all)
                                 }) {
-                                    ShopPromotionBannerView(activtiesItems: ActivitiesItem(id: 1, activityName: item.name, activityNameLabel: item.name, activityImage: "", selectedActivity: true), selectedActivity: ActivitySelected())
+//                                    ShopPromotionBannerView(activtiesItems: ActivitiesItem(id: 1, activityName: item.name, activityNameLabel: item.name, activityImage: "", selectedActivity: true), selectedActivity: ActivitySelected())
+//                                        .frame(width: 120, height: 60)
+                                    
+                                    Text("\(item.name)")
                                         .frame(width: 120, height: 60)
+                                        .font(.system(size: 14, weight: .bold, design: Font.Design.default))
+                                        .foregroundColor(Color.white)
+                                        .background(Color.black)
+                                        .clipShape(RoundedRectangle(cornerRadius: 15))
                                 }
-                                //                                    .frame(width: 120, height: 60)
-                                
                             }
                         }.padding(.leading, 30)
                             .padding(.trailing, 30)

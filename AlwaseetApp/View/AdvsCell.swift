@@ -12,11 +12,29 @@ struct AdvsCell: View {
     var body: some View {
         GeometryReader { g in
             ZStack{
-//                Image("\(self.resourceItems.resourceImage)")
-                AsyncImage(url: URL(string: self.advData.background_image))
-                .opacity(0.8)
-                .background(Color.black)
+//                AsyncImage(url: URL(string: self.advData.background_image))
+//                    .opacity(0.8)
+//                .background(Color.black)
+                
+                AsyncImage(
+                               url: URL(string: self.advData.background_image),
+                               content: { image in
+                                   image.resizable()
+                                        .aspectRatio(contentMode: .fill)
+//                                        .frame(maxWidth: 300, maxHeight: 100)
+                               },
+                               placeholder: {
+                                   ProgressView()
+                               }
+                           )
+                
                 VStack(alignment: .center) {
+                    Text("Title: \(self.advData.title)")
+                        .font(.system(size: 16, weight: .bold, design: Font.Design.default))
+                        .frame(width: 150)
+                        .foregroundColor(Color.white)
+                        .multilineTextAlignment(.center)
+                    
                     Text("Price: \(self.advData.price)")
                         .font(.system(size: 16, weight: .bold, design: Font.Design.default))
                         .frame(width: 150)
@@ -38,6 +56,8 @@ struct AdvsCell: View {
                         
             }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
             .cornerRadius(10)
+            .background(Color.gray.opacity(0.5))
+            .cornerRadius(25)
         }
     }
 }

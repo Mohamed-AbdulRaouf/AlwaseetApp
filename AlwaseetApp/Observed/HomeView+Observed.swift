@@ -26,12 +26,12 @@ extension HomeView {
         //MARK: - Properties
         @Published var advsData = [AdvsData]()
         @Published var categories = [CategoriesData(name: "All"),
-                                     CategoriesData(name: "cars"),
-                                     CategoriesData(name: "mobiles"),
-                                     CategoriesData(name: "labtops"),
-                                     CategoriesData(name: "homes"),
-                                     CategoriesData(name: "computers"),
-                                     CategoriesData(name: "animals")]
+                                     CategoriesData(name: "Cars"),
+                                     CategoriesData(name: "Mobiles"),
+                                     CategoriesData(name: "Labtops"),
+                                     CategoriesData(name: "Homes"),
+                                     CategoriesData(name: "Computers"),
+                                     CategoriesData(name: "Animals")]
         
         //MARK: - Func
         func getAdvsBy(filter: AdvsFilter) {
@@ -62,5 +62,10 @@ extension HomeView {
 
 enum AdvsFilter: String {
     case all = ""
-    case cars = "cars"
+    case cars = "Cars"
+    case mobiles = "Mobiles"
+    case labtops = "Labtops"
+    case homes = "Homes"
+    case computers = "Computers"
+    case animals = "Animals"
 }

@@ -173,6 +173,11 @@ class NetworkManager {
                 for adv in data {
                     advData = AdvsData()
                     adv.forEach { (key, value) in
+                        if key == "title" {
+                            print(value?.stringValue)
+                            advData.title = value?.stringValue ?? ""
+                        }
+                        
                         if key == "category_type" {
                             print(value?.stringValue)
                             advData.category_type = value?.stringValue ?? ""
@@ -225,6 +230,10 @@ class NetworkManager {
                 for adv in data {
                     advData = AdvsData()
                     adv.forEach { (key, value) in
+                        if key == "title" {
+                            print(value?.stringValue)
+                            advData.title = value?.stringValue ?? ""
+                        }
                         if key == "category_type" {
                             print(value?.stringValue)
                             advData.category_type = value?.stringValue ?? ""
@@ -265,6 +274,7 @@ class NetworkManager {
     func addAdvs(advs: AdvsData, completionHandler: @escaping isAddAdvsCompletionHandler) {
         
         let advs: Document = ["phone": AnyBSON(stringLiteral:advs.phone),
+                              "title": AnyBSON(stringLiteral:advs.title),
                               "background_image": AnyBSON(stringLiteral:advs.background_image),
                               "price": AnyBSON(stringLiteral:advs.price),
                               "address": AnyBSON(stringLiteral:advs.address),
